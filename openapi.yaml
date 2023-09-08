@@ -1,0 +1,105 @@
+openapi: 3.0.1
+info:
+  title: Pexels Image Search
+  description: Search for high-quality images on Pexels directly through ChatGPT.
+  version: "v1"
+servers:
+  - url: https://pexels.bighadj22.repl.co
+paths:
+  /v1/search:
+    get:
+      operationId: searchImages
+      summary: Search for images on Pexels
+      parameters:
+        - name: query
+          in: query
+          description: The search query (e.g., 'Nature', 'Tigers', 'People').
+          required: true
+          schema:
+            type: string
+        - name: orientation
+          in: query
+          description: Desired photo orientation (landscape, portrait, square).
+          required: false
+          schema:
+            type: string
+            enum:
+              - landscape
+              - portrait
+              - square
+        - name: size
+          in: query
+          description: Minimum photo size (large, medium, small).
+          required: false
+          schema:
+            type: string
+            enum:
+              - large
+              - medium
+              - small
+        - name: color
+          in: query
+          description: Desired photo color.
+          required: false
+          schema:
+            type: string
+        - name: locale
+          in: query
+          description: The locale of the search.
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          description: The page number.
+          required: false
+          schema:
+            type: integer
+        - name: per_page
+          in: query
+          description: The number of results per page.
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  photos:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        url:
+                          type: string
+                        photographer:
+                          type: string
+                        src:
+                          type: object
+                          properties:
+                            original:
+                              type: string
+                            large2x:
+                              type: string
+                            large:
+                              type: string
+                            medium:
+                              type: string
+                            small:
+                              type: string
+                            portrait:
+                              type: string
+                            landscape:
+                              type: string
+                            tiny:
+                              type: string
+        "400":
+          description: Bad Request
+        "500":
+          description: Server Error
