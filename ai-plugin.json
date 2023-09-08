@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Pexels Image Search",
+  "name_for_model": "Pexels",
+  "description_for_human": "Search for high-quality images on Pexels directly through ChatGPT.",
+  "description_for_model": "The Pexels plugin allows users to search for high-quality images on Pexels. Users can provide a search query (e.g., 'Nature', 'Tigers', 'People', etc.) and receive image links that match their query. The plugin supports various parameters like orientation, size, color, and locale to refine the search results.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://add-your-domain-name.co/.well-known/openapi.yaml"
+  },
+  "logo_url": "https://add-your-domain-name.repl.co/pexels.png",
+  "contact_email": "support@yourdomain.com",
+  "legal_info_url": "https://dd-your-domain-name/terms-of-service"
+}
