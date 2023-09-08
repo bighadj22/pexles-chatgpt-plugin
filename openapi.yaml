@@ -4,7 +4,7 @@ info:
   description: Search for high-quality images on Pexels directly through ChatGPT.
   version: "v1"
 servers:
-  - url: https://pexels.bighadj22.repl.co
+  - url: https://add-here.repl.co
 paths:
   /v1/search:
     get:
